@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <img src="/assets/shapes.png" alt=""/>
+    <ion-card-header>
+      <ion-card-subtitle>SISCOM Censo</ion-card-subtitle>
+      <ion-card-title>Cuestionario de censado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-row>
+    <ion-col text-start padding-top>
+      <ion-title>Google Map</ion-title>
+    </ion-col>
+    <ion-col text-end>
+      <ion-button (click)="loadMap()" shape="round" fill="outline">
+        <ion-icon slot="start" name="locate"></ion-icon>
+        ¿Donde estoy?
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <div class="map-wrapper">
+    <div id="map_center">
+      <img src="../../assets/icon/center_marker.png" />
+    </div>
+    <div #map id="map"></div>
+  </div>
+  <div id="address">
+    <span>{{address}}</span>
+  </div>
+
+  <!--<ion-button (click)="takePhoto()">
+    Take Snap
+  </ion-button>
+ 
+  <img [src]="capturedSnapURL"/>-->
+
+  <ion-fab-button (click)="takePhoto()">
+    <ion-icon name="camera"></ion-icon>
+  </ion-fab-button>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let photo of photoService.photos">
+        <img [src]="photo.data" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

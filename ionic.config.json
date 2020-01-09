@@ -1,0 +1,7 @@
+{
+  "name": "SiscomCenso",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
